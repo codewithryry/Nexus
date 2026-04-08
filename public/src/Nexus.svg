@@ -1,0 +1,36 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6ff"></stop>
+      <stop offset="100%" stop-color="#0072ff"></stop>
+    </linearGradient>
+
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff00ff"></stop>
+      <stop offset="100%" stop-color="#7b00ff"></stop>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- Orbit 1 -->
+  <ellipse cx="256" cy="256" rx="180" ry="90" fill="none" stroke="url(#grad1)" stroke-width="14" transform="rotate(45 256 256)" filter="url(#glow)"></ellipse>
+
+  <!-- Orbit 2 -->
+  <ellipse cx="256" cy="256" rx="180" ry="90" fill="none" stroke="url(#grad2)" stroke-width="14" transform="rotate(-45 256 256)" filter="url(#glow)"></ellipse>
+
+  <!-- Horizontal orbit -->
+  <ellipse cx="256" cy="256" rx="200" ry="70" fill="none" stroke="url(#grad1)" stroke-width="10" opacity="0.8"></ellipse>
+
+  <!-- Center node -->
+  <circle cx="256" cy="256" r="16" fill="white" filter="url(#glow)"></circle>
+
+</svg>
